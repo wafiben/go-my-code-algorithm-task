@@ -1,0 +1,31 @@
+ALGORITHM text_algorithm
+VAR
+    chaine : String;
+    nbWords : INTEGER;
+    nbvowels: INTEGER;
+    chaine_length: INTEGER;
+    chaine:="coding is an art."
+    nbvowels:=0;
+    nbWords:=1;
+    chaine_length:=0;
+    
+BEGIN
+  chaine_length:=chaine.length() ;
+
+FOR i FROM 1 TO chaine.length() 
+        ch := chaine.charAt(i);
+        IF (ch="" ) THEN 
+            nbWords:=0;
+
+        IF (ch=" " ) THEN 
+            nbWords:= nbWords +1;
+
+        END_IF
+        IF((ch="a" )OR(ch="e" )OR(ch="y" )OR (ch="u" )OR(ch="i" )OR (ch="o" )OR(ch="A" )OR(ch="E" )OR(ch="Y" )OR (ch="U" )OR(ch="I" )OR (ch="O" )) THEN
+        nbvowels:=nbvowels+1;
+
+    END_FOR
+    write(chaine_length);
+    write(nbWords);
+    write(nbvowels)
+END
