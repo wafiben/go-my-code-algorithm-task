@@ -1,31 +1,37 @@
-ALGORITHM text_algorithm
+ALGORITHM String_algorithm
 VAR
-    chaine : String;
+    chaine : STRING [];
     nbWords : INTEGER;
     nbvowels: INTEGER;
     chaine_length: INTEGER;
+    i: INTEGER;
     chaine:="coding is an art."
     nbvowels:=0;
     nbWords:=1;
     chaine_length:=0;
+    i:=0;
     
 BEGIN
-  chaine_length:=chaine.length() ;
+  chaine_length:=chaine.length ;
+  chaine:= ToUpper(chaine);
 
-FOR i FROM 1 TO chaine.length() 
+FOR i FROM 0 TO chaine.length
         ch := chaine.charAt(i);
         IF (ch="" ) THEN 
             nbWords:=0;
+        END_IF
 
         IF (ch=" " ) THEN 
             nbWords:= nbWords +1;
 
         END_IF
-        IF((ch="a" )OR(ch="e" )OR(ch="y" )OR (ch="u" )OR(ch="i" )OR (ch="o" )OR(ch="A" )OR(ch="E" )OR(ch="Y" )OR (ch="U" )OR(ch="I" )OR (ch="O" )) THEN
+        
+        IF((ch="A" )OR(ch="E" )OR(ch="Y" )OR (ch="U" )OR(ch="I" )OR (ch="O" ) ) THEN
         nbvowels:=nbvowels+1;
+        END_IF
 
     END_FOR
-    write(chaine_length);
-    write(nbWords);
-    write(nbvowels)
+    Write(chaine_length);
+    Write(nbWords);
+    Write(nbvowels)
 END
