@@ -5,30 +5,35 @@ VAR
     nbvowels: INTEGER;
     chaine_length: INTEGER;
     i: INTEGER;
-    chaine:="coding is an art."
+    chaine:=""
     nbvowels:=0;
     nbWords:=1;
     chaine_length:=0;
     i:=0;
     
 BEGIN
-  chaine_length:=chaine.length ;
-  chaine:= ToUpper(chaine);
 
-FOR i FROM 0 TO chaine.length
-        ch := chaine.charAt(i);
-        IF (ch="" ) THEN 
-            nbWords:=0;
-        END_IF
+REPEAT
+    Write('taper un caractére')
+    Read(ch)
 
-        IF (ch=" " ) THEN 
+     IF (ch=" " ) THEN 
             nbWords:= nbWords +1;
+            nb_char=nb_char+1
 
         END_IF
-        
-        IF((ch="A" )OR(ch="E" )OR(ch="Y" )OR (ch="U" )OR(ch="I" )OR (ch="O" ) ) THEN
+ IF((Toupper(ch)="A" OR(Toupper(ch)="E" )OR(Toupper(ch)="Y" )OR (Toupper(ch)="U" )OR(Toupper(ch)="I" )OR (Toupper(ch)="O" ) ) THEN
         nbvowels:=nbvowels+1;
         END_IF
+
+UNTIL (ch='.')
+
+
+
+
+       
+        
+       
 
     END_FOR
     Write(chaine_length);
